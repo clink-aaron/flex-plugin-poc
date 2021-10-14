@@ -66,3 +66,6 @@ pluginsService.js
 build/
 
 .twilio-cli
+.cache/
+.config
+.pki
