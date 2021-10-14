@@ -1,18 +1,22 @@
 {
   "name": "plugin-poc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "postinstall": "flex-plugin pre-script-check",
-    "start": "flex-plugin start"
+    "twilio": "HOME=. twilio",
+    "start": "HOME=. twilio flex:plugins:start",
+    "postinstall": "HOME=. twilio plugins:link ./node_modules/@twilio-labs/plugin-flex",
+    "clean": "rm -rf .twilio-cli"
   },
   "dependencies": {
+    "@twilio-labs/plugin-flex": "^4.2.0",
     "flex-plugin-scripts": "4.2.0",
+    "twilio-cli": "^2.31.0",
     "react": "16.5.2",
     "react-dom": "16.5.2"
   },
   "devDependencies": {
-    "@twilio/flex-ui": "^1",
+    "@twilio/flex-ui": "~1.27.0",
     "react-test-renderer": "16.5.2"
   }
 }

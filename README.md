@@ -1,24 +1,24 @@
-# Demonstration of flex-plugin not working as standalone
+# Demonstration of twilio-cli flex-plugin workaround
 
 
 Utilizing docker-compose to provide a fresh environment. If you need docker you can
 [get it here](https://docs.docker.com/get-docker/).
 
-The repo was bootstrapped using the current version of twilio-cli.
-The only differences to this repo and an out-of-the-box repo is the addition the 'start'
-script in the package.json.
-```
-"start": "flex-plugin start"
-```
+Twilio-cli and associated plugins are hardcoded to look for a config in ~/.twilio-cli.
 
-## step to reproduce the issue
+
+This is unsuitable for a number of reasons, but luckily it can be worked around.
+
+See the `package.json` for the workaround.
+
+## setup
 
 install dependencies:
 
 ```bash
 # install dependencies
-docker-compose run --rm plugin npm install
+make install
 
-# attempt to start the script
-docker-compose run --rm plugin npm run start
+# start the dev server
+make start
 ```
